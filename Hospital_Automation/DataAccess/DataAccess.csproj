@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39C4A96C-A78F-46A0-8FB9-137DAE9F886C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Management\AppointmentManagement.cs" />
+    <Compile Include="Management\DepartmentManagement.cs" />
+    <Compile Include="Management\DoctorLoginDetailManagement.cs" />
+    <Compile Include="Management\DoctorWorkingHourManagement.cs" />
+    <Compile Include="Management\ExaminationManagement.cs" />
+    <Compile Include="Management\HospitalDetailManagement.cs" />
+    <Compile Include="Management\HospitalManagement.cs" />
+    <Compile Include="Management\PharmacistManagement.cs" />
+    <Compile Include="Management\PolyclinicManagement.cs" />
+    <Compile Include="Management\PrescriptionManagement.cs" />
+    <Compile Include="Mapping\AppointmentMapping.cs" />
+    <Compile Include="Mapping\DepartmentMapping.cs" />
+    <Compile Include="Mapping\DiagnosisMapping.cs" />
+    <Compile Include="Mapping\DoctorLoginDetailMapping.cs" />
+    <Compile Include="Management\DoctorManagement.cs" />
+    <Compile Include="Mapping\DoctorMapping.cs" />
+    <Compile Include="Management\PatientLoginDetailManagement.cs" />
+    <Compile Include="Mapping\DoctorWorkingHourMapping.cs" />
+    <Compile Include="Mapping\ExaminationMapping.cs" />
+    <Compile Include="Mapping\HospitalDetailMapping.cs" />
+    <Compile Include="Mapping\HospitalMapping.cs" />
+    <Compile Include="Mapping\PatientLoginDetailMapping.cs" />
+    <Compile Include="Management\PatientManagement.cs" />
+    <Compile Include="Mapping\PatientMapping.cs" />
+    <Compile Include="Management\PharmacistLoginDetailManagement.cs" />
+    <Compile Include="Mapping\PharmacistLoginDetailMapping.cs" />
+    <Compile Include="Mapping\PharmacistMapping.cs" />
+    <Compile Include="Mapping\PolyclinicMapping.cs" />
+    <Compile Include="Mapping\PrescriptionMapping.cs" />
+    <Compile Include="Migrations\201905150228287_Mig1.cs" />
+    <Compile Include="Migrations\201905150228287_Mig1.Designer.cs">
+      <DependentUpon>201905150228287_Mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905150237439_Mig2.cs" />
+    <Compile Include="Migrations\201905150237439_Mig2.Designer.cs">
+      <DependentUpon>201905150237439_Mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151620425_mig3.cs" />
+    <Compile Include="Migrations\201905151620425_mig3.Designer.cs">
+      <DependentUpon>201905151620425_mig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905191426016_Mig4.cs" />
+    <Compile Include="Migrations\201905191426016_Mig4.Designer.cs">
+      <DependentUpon>201905191426016_Mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905191459583_Mig5.cs" />
+    <Compile Include="Migrations\201905191459583_Mig5.Designer.cs">
+      <DependentUpon>201905191459583_Mig5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{40AE9DA7-3BF2-4E7C-BAD0-CE8135A8C0A9}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905150228287_Mig1.resx">
+      <DependentUpon>201905150228287_Mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905150237439_Mig2.resx">
+      <DependentUpon>201905150237439_Mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151620425_mig3.resx">
+      <DependentUpon>201905151620425_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191426016_Mig4.resx">
+      <DependentUpon>201905191426016_Mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191459583_Mig5.resx">
+      <DependentUpon>201905191459583_Mig5.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
